@@ -1,6 +1,6 @@
 const
 body = document.querySelector('body'),
-beginUrl = body.data('url'),
+beginUrl = body.getAttribute('data-url'),
 fetchDataBtn = document.getElementById('fetchData'),
 website = document.querySelector('.website'),
 example = document.getElementById('example'),
