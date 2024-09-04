@@ -1,0 +1,7 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+# autoriser des site à correspondre
+SetEnvIf Origin "http(s)?://(www\.)?(potterhead-api.vercel.app/api/characters)$"AccessControlAllowOrigin=$0
+Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+Header merge Vary Origin

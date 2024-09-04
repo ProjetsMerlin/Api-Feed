@@ -1,0 +1,44 @@
+  <!DOCTYPE html>
+  <html lang="fr-BE">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Api Feed</title>
+    <meta name="description" content="UNe liseuse d'API">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="lintermediaire.be">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel='stylesheet' href='./tailwind.css'>
+  </head>
+  <body class="box-border	overflow-x-hidden">
+    <form method="post" class="m-auto w-full p-4 text-center">
+      <label for="api" class="block font-bold w-full mb-2">Run your API !</label>
+      <select name="api" id="api" class="inline-block p-2 w-80 border js_api">
+        <option value="" selected disabled>Select an API</option>
+        <option value="https://api.thecatapi.com/v1/images/search?limit=20">Cats</option>
+        <option value="https://hp-api.onrender.com/api/characters">Harry Potter</option>
+        <option value="https://jsonplaceholder.typicode.com/users">Example Users</option>
+        <option value="https://jsonplaceholder.typicode.com/todos">Example To Do</option>
+        <option value="https://lintermediaire.be/wp-json/wp/v2/posts">Example Wordpress</option>
+      </select>
+      <label class="hidden" for="purpose">purpose</label>
+      <input autocomplete="true" type="url" id="purpose" name="purpose" class="inline-block py-2 px-4 border"/>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" id="fetchData">API Feed !</button>
+    </form>
+    <hr>
+    <div class="website flex flex-wrap m-auto w-full">
+      <div id="example" class="max-w-sm w-full lg:w-1/4 md:w-1/3 my-2 p-2 rounded overflow-hidden shadow-lg hidden js_item">
+        <a href="#" data-api="link">
+          <div data-api="img"></div>
+          <div class="px-6 py-4">
+            <h2 class="font-bold text-xl mb-2" data-api="id"></h2>
+            <p class="text-gray-700 text-base" data-api="description"></p>
+          </div>
+          <div class="px-6 pt-4 pb-2" data-api="content" ></div>
+        </a>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+  </html>
